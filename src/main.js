@@ -4,15 +4,13 @@ import firebase from 'firebase'
 
 Vue.config.productionTip = false
 
-console.log(process.env.VUE_API_FIRE_BASE);
-
 var config = {
-        apiKey: process.env.FIRE_BASE.API_KEY,
-        authDomain: process.env.AUTH_DOMAIN,
-        databaseURL: process.env.FIRE_BASE.DATABASE_URL,
-        projectId: process.env.FIRE_BASE.PROJECT_ID,
-        storageBucket: process.env.STORAGE_BUCKET,
-        messagingSenderId: process.env.MESSAGING_SENDERID,
+        apiKey: "AIzaSyBs3EkI7xTbHdOpHlrgvpg_7uMapxcBPp0",
+        authDomain: "githubpages-todo-fb.firebaseapp.com",
+        databaseURL: "https://githubpages-todo-fb.firebaseio.com",
+        projectId: "githubpages-todo-fb",
+        storageBucket: "githubpages-todo-fb.appspot.com",
+        messagingSenderId: "866981490178",
 };
 firebase.initializeApp(config);
 
