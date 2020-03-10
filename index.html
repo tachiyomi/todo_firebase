@@ -22,11 +22,19 @@
 <body> <!-- html部分 -->
     <div id="container">
         <div id="main">
+          <button onclick="sunmit()">add!<button>
         </div>
     </div>
 </body>
 <script> //制御部分
     var db = firebase.database();
-    db.ref('a').set("hoge");
+    function submit(){
+      db.ref('a').set("hoge");
+
+      db.ref('test2').set({
+          "fuga1":"fuga",
+          "fuga2":"fugafuga"
+      });
+    }
 </script>
 </html>
