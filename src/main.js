@@ -1,8 +1,10 @@
 import Vue from 'vue'
-import App from './App'
+import App from './App.vue'
 import firebase from 'firebase'
 
 Vue.config.productionTip = false
+
+console.log(process.env.FIRE_BASE);
 
 var config = {
         apiKey: process.env.FIRE_BASE.API_KEY,
