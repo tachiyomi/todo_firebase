@@ -18,77 +18,15 @@
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
     </script>
-    <style> /* cssで最低限の体裁を整える */
-        #e_content {
-            height: 100px;
-            width: 100%;
-        }
-        #container {
-            width: 600px;
-            margin: 0 auto;
-        }
-        #form {
-            width: 100%;
-        }
-        #main {
-            padding: 15px;
-            border: 1px #333 solid;
-            max-height:450px;
-            overflow-y:scroll;
-        }
-        .msg {
-            border-bottom: 1px dashed #666
-        }
-    </style>
 </head>
 <body> <!-- html部分 -->
     <div id="container">
         <div id="main">
         </div>
-        <div>
-            <table id="form">
-                <tr>
-                    <td>Your Name</td>
-                    <td><input id="e_name"></td></tr>
-                <tr>
-                    <td>Content</td>
-                    <td><textarea id="e_content"></textarea></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><Button onclick="submit()">Submit</Button></td>
-                </tr>
-            </table>
-        </div>
     </div>
 </body>
 <script> //制御部分
     var db = firebase.database();
-    db.ref('msg').on("child_added", function(obj) {
-        var data = obj.val();
-        var name = data.name;
-        var content = data.content;
-        var e = document.createElement("div");
-        e.setAttribute("class", "msg");
-        e.innerHTML = "<p class='name'>Name: " + name + "</p><p class='content'>Content: " + content + "</p>";
-        var box=document.getElementById("main");
-        box.appendChild(e);
-        box.scrollTop=box.scrollHeight;
-    })
-    function submit() {
-        var el_n = document.getElementById("e_name")
-        var el_c = document.getElementById("e_content")
-        var name = el_n.value,
-            content = el_c.value;
-        if (name == "" || content == "") {
-            alert("Please fill out the blank!");
-            return;
-        }
-        el_c.value = "";
-        db.ref('msg').push().set({
-            "name": name,
-            "content": content
-        });
-    }
+    db.ref('a').set("hoge");
 </script>
 </html>
